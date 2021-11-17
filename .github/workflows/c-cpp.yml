@@ -1,0 +1,16 @@
+name: C
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build
+      run: gcc main.c -o main
+    - name: execute
+      run: ./main
