@@ -1,0 +1,19 @@
+name: C execute file || Docker mouli
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  testbox:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
+    steps:  
+      - uses: actions/checkout@v2
+      - name: build && compile    || Docker mouli
+        run: gcc *.c -o main
+      - name: execute             || Docker mouli
+        run: ./main
